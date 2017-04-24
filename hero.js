@@ -25,37 +25,28 @@ projectNameHere = {
     $('.mid-class-name-here-hp-bg')
       .css("background-position", "71% center");
 
-    var rtime;
-    var timeout = false;
-    var delta = 200;
-    $(window).resize(function() {
-      rtime = new Date();
-      if (timeout === false) {
-        timeout = true;
-        setTimeout(resizeend, delta);
-      }
-    });
+    var resizeTimer;
 
-    function resizeend() {
-      if (new Date() - rtime < delta) {
-        setTimeout(resizeend, delta);
-      } else {
-        timeout = false;
+    $(window).on('resize', function(e) {
+
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
 
         var heroWith = $(window).width();
 
         if (heroWith <= 500) {
-          console.log(heroWith);
 
-          $('.mid-class-name-here-hp-bg')
-            .css("background-position", "71% center");
+          $('MID_CLASS_NAME_HERE-bg')
+            .css("background-position", "left center");
 
         } else {
-          $('.mid-class-name-here-hp-bg')
+          $('MID_CLASS_NAME_HERE-bg')
             .css("background-position", "center");
         }
-      }
-    }
+
+      }, 250);
+
+    });
   }
 
 };
