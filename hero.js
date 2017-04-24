@@ -20,7 +20,7 @@ projectNameHere = {
       bannerNameRoot__parent.addClass(homeBanner + '-bg');
     },
 
-    //USED TO CONTROL THE BG POSITION OF 
+    //USED TO CONTROL THE BG POSITION OF ABSTRACT BACKGROUND
     bannerBGstyling : function () {
       $('.mid-class-name-here-hp-bg')
         .css("background-position", "71% center");
